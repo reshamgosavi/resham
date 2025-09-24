@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To‑Do</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <noscript>This app requires JavaScript to run.</noscript>
+    <div id="app-root">
+      <main class="app" aria-labelledby="app-title">
+        <header class="app__header">
+          <h1 id="app-title">To‑Do</h1>
+          <form id="new-todo-form" autocomplete="off">
+            <label for="new-todo-input" class="visually-hidden">Add a new task</label>
+            <input id="new-todo-input" name="title" type="text" placeholder="What needs to be done?" maxlength="200" required>
+            <button id="add-todo-button" type="submit" aria-label="Add task">Add</button>
+          </form>
+        </header>
+
+        <section class="app__controls" aria-label="Controls">
+          <button id="toggle-all" type="button" title="Toggle all tasks">Toggle All</button>
+          <div class="filters" role="group" aria-label="Filter tasks">
+            <button class="filter" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter" data-filter="active" aria-pressed="false">Active</button>
+            <button class="filter" data-filter="completed" aria-pressed="false">Completed</button>
+          </div>
+          <div class="meta">
+            <span id="items-left" aria-live="polite">0 items left</span>
+          </div>
+        </section>
+
+        <section class="app__list" aria-label="To‑Do list">
+          <ul id="todo-list"></ul>
+        </section>
+
+        <footer class="app__footer">
+          <button id="clear-completed" type="button">Clear completed</button>
+        </footer>
+
+        <div id="sr-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+      </main>
+    </div>
+    <script src="./app.js" defer></script>
+  </body>
+  </html>
+
